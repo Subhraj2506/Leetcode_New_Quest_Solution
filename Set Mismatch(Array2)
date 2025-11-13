@@ -1,0 +1,21 @@
+class Solution {
+    public int[] findErrorNums(int[] nums) {
+        int n= nums.length;
+        int []cou=new int [n+1];
+        int dupli=-1;
+        int miss=-1;
+        for(int arr:nums){
+            cou[arr]++;
+        }
+        for(int i=1;i<=n;i++){
+            if(cou[i]==2){
+                dupli=i;
+
+            }
+            if(cou[i]==0){
+                miss=i;
+            }
+        }
+        return new int[]{dupli,miss};
+    }
+}
